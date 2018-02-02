@@ -1,5 +1,5 @@
-function findMinAndRemoveSorted(array){
-  return array.shift()
+function findMinAndRemoveSorted(arr){
+  return arr.shift()
 }
 
 function merge(firstSubarray, secondSubArray){
@@ -14,15 +14,15 @@ function merge(firstSubarray, secondSubArray){
   return sorted.concat(firstSubarray).concat(secondSubArray)
 }
 
-function mergeSort(array){
-  let midpoint = array.length/2
-  let firstHalf = array.slice(0, midpoint)
-  let secondHalf = array.slice(midpoint, array.length)
+function mergeSort(arr){
+  let midpoint = arr.length/2
+  let firstHalf = arr.slice(0, midpoint)
+  let secondHalf = arr.slice(midpoint, arr.length)
   let sorted;
 
-  if(array.length < 2){
-    return array
-  } else {
+  if (arr.length < 2) {
+    return arr
+  } else{
     sorted = merge(mergeSort(firstHalf), mergeSort(secondHalf))
   }
   return sorted
